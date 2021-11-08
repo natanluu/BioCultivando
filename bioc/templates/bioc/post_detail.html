@@ -1,0 +1,140 @@
+{% load static %}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<title> modelo </title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rockwell">
+<link rel="stylesheet" href="{% static 'estilos/estilossb.css' %}">
+<link rel="icon" type="imagem/png" href="{% static 'imagens/favicon.ico' %}"/>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<div class="body">
+	<body>
+		
+
+		<div class="titulo">
+		<img src="{% static 'imagens/nome.png' %}"/>
+		</div>
+
+
+		<div class="nome">
+			<h1> {{ post.titulo }} </h1>
+		</div>
+
+
+
+		<div class="imagem">
+			<img src="/media/{{ post.imagem }} " title="{{ post.titulo }}" class="bord">
+		</div>
+
+
+		{% block info %}
+		<div class="infor">
+			<p> </p>
+		</div>
+
+		<div class="infortb">
+			<div class="w3-container"> 
+  				<h2>Nome Científico</h2>
+			<div class="w3-dropdown-hover"><i class="w3-button fa fa-search"></i>
+    			<div class="w3-dropdown-content w3-card-4, borda" style="width:250px">
+      				<div class="w3-container, borda" id="demo">
+        				<p> {{ post.texto }} </p>
+      				</div>
+    			</div>
+  			</div>
+			</div>
+
+			<div class="w3-container"> 
+  				<h2>Tamanho</h2>
+			<div class="w3-dropdown-hover"><i class="w3-button fa fa-search"></i>
+    			<div class="w3-dropdown-content w3-card-4, borda" style="width:250px">
+      				<div class="w3-container, borda" id="demo">
+        				<p> {{ post.tamanho }} </p>
+      				</div>
+    			</div>
+  			</div>
+
+			</div>
+
+
+			<div class="w3-container"> 
+  				<h2>Cores Comuns</h2>
+			<div class="w3-dropdown-hover"><i class="w3-button fa fa-search"></i>
+    			<div class="w3-dropdown-content w3-card-4, borda" style="width:250px">
+      				<div class="w3-container, borda" id="demo">
+        				<p> {{ post.cores }} </p>
+      				</div>
+    			</div>
+  			</div>
+
+			</div>
+
+			<div class="w3-container"> 
+  				<h2>Características</h2>
+			<div class="w3-dropdown-hover"><i class="w3-button fa fa-search"></i>
+    			<div class="w3-dropdown-content w3-card-4, borda" style="width:250px">
+      				<div class="w3-container, borda" id="demo">
+        				<p> {{ post.caract }} </p>
+      				</div>
+    			</div>
+  			</div>
+
+			</div>
+
+			<div class="w3-container"> 
+  				<h2>Sobre o Cultivo</h2>
+			<div class="w3-dropdown-hover"><i class="w3-button fa fa-search"></i>
+    			<div class="w3-dropdown-content w3-card-4, borda" style="width:250px">
+      				<div class="w3-container, borda" id="demo">
+        				<p> {{ post.sobre }}</p>
+      				</div>
+    			</div>
+  			</div>
+			</div>
+		</div>
+		{% endblock %}
+
+		<div class="botoes">
+      		<button class="botv"><a href="{% url 'index' %}">Voltar ao Início</a></button>
+      		<button class="botv"><a href="{% url 'postso' %}">Ir para Ornamentais</a></button>
+      		<button class="botv"><a href="{% url 'posts' %}">Ir para Fitoterápicas</a></button>
+ 		</div>
+
+
+
+      <ul>
+      <li> <a id="sug" href="{% url 'sugestao' %}">Tem uma sugestão? Manda pra gente!</a> 
+      </ul>
+
+
+		<div class="w3-container" id="foot">
+
+			<div class="dev">
+				<div class="fras">
+					<p>IFRN - Campus Nova Cruz.<p>
+				</div>
+
+				<div class="fras">
+					<p>—<p>
+				</div>
+
+				<div class="fras">
+  					<p> Desenvolvedores: Liliane Rodrigues e Natan Luis. </p>
+  				</div>
+
+				<div class="fras">
+					<p>—<p>
+				</div>
+
+  				<div class="fras">
+  					<p> Orientadores: Eduardo Herinque e Danyelle Alves.</p>
+  				</div>
+  			</div>
+		</div>
+	</body>
+</div>
+</html>

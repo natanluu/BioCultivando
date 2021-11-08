@@ -1,0 +1,70 @@
+{% load static %}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<title> Fitoterápicas </title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rockwell">
+<link rel="stylesheet" href="{% static 'estilos/estilossb.css' %}">
+<link rel="icon" type="imagem/png" href="{% static 'imagens/favicon.ico' %}"/>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<div class="body">
+	<body>
+
+		<div class="titulo">
+			<h1><b> Plantas Fitoterápicas </b></h1>
+		</div>
+
+		<div class="tituloof">
+			<p> Plantas fitoterápicas são utilizadas na cura e no tratamento de doenças. Tendo em vista que nem todas as plantas são recomendadas para o tratamento de sintomas, você poderá conhecer, nesta página, as espécies que são usadas com esse objetivo, assim como conhecerá as melhores formas de utilizá-las. </p>
+		</div>
+
+		<div class="botoes">
+      			<button class="botv"><a href="{% url 'index' %}">Voltar ao Início</a></button>
+      			<button class="botv"><a href="{% url 'postso' %}">Ir para Ornamentais</a></button>
+ 		</div>
+ 		{% for post in posts %}
+		<div class="plan">
+			<div class="cardes">
+			<img src="/media/{{post.imagem }}" title ="{{ post.titulo }}" class="bord"/>
+				<div class="botao">
+					<a href="{{ post.get_absolute_url }}"> {{ post.titulo }} </a>
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+
+      <ul>
+      	<li> <a id="sug" href="{% url 'sugestao' %}">Tem uma sugestão? Manda pra gente!</a> </li>
+      </ul>
+
+
+		<div class="w3-container" id="foot3">
+			<div class="dev">
+				<div class="fras">
+					<p>IFRN - Campus Nova Cruz.<p>
+				</div>
+
+				<div class="fras">
+					<p>—<p>
+				</div>
+
+				<div class="fras">
+  					<p> Desenvolvedores: Liliane Rodrigues e Natan Luis. </p>
+  				</div>
+
+				<div class="fras">
+					<p>—<p>
+				</div>
+
+  				<div class="fras">
+  					<p> Orientadores: Eduardo Herinque e Danyelle Alves.</p>
+  				</div>
+  			</div>
+		</div>
+	</body>
+</div>
+</html>

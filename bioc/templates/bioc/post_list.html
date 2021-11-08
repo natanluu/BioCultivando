@@ -1,0 +1,46 @@
+{% load static %}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<title> Ornamentais </title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rockwell">
+<link rel="stylesheet" type="text/css" href="{% static 'estilos/estilossb.css' %}">
+<link rel="icon" type="imagem/png" href="{% static 'imagens/favicon.ico' %}"/>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<div class="body">
+	<body>
+
+		<div class="titulo">
+			<h1><b> Plantas Ornamentais (Suculentas) </b></h1>
+		</div>
+
+		<div class="tituloof">
+			<p> Plantas ornamentais são cultivadas pela beleza e utilizadas para decoração. Nesta página, você conhecerá as suculentas, que são plantas ornamentais conhecidas pela capacidade de armazenamento de água prolongado, o que faz com que a procura por elas seja maior, uma vez que não precisam de água todos os dias e mantêm a beleza do ambiente. </p>
+		</div>
+
+		<div class="botoes">
+      			<button class="botv"><a href="{% url 'index' %}">Voltar ao Início</a></button>
+      			<button class="botv"><a href="{% url 'posts' %}">Ir para Fitoterápicas</a></button>
+ 		</div>
+ 		{% for post in posts  %}
+		<div class="plan">
+			<div class="cardes">
+				<img src="/media/{{post.imagem }}" title ="{{ post.titulo }}" class="bord"/>
+					<div class="botao">
+						<a href="{{ post.get_absolute_url }}"> {{ post.titulo }} </a>
+					</div>
+			</div>
+		</div>
+		{% endfor %}
+
+      <ul>
+      	<li> <a id="sug" href="{% url 'sugestao' %}">Tem uma sugestão? Manda pra gente!</a> </li>
+      </ul>
+      
+	</body>
+</div>
+</html>
