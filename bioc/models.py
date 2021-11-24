@@ -39,3 +39,19 @@ class Sugestao(models.Model):
 	categoria = models.CharField(max_length=50)
 	foto = models.FileField()
 
+class Form(models.Model):
+	sugestao = models.TextField()
+	recado = models.TextField()
+	SUCU = 'SC'
+	FITO = 'FT'
+	categoria = [
+		('-', '-'),
+		(SUCU, 'Suculentas'),
+		(FITO, 'Fitoterápicas'),
+	]
+	categoria = models.CharField(
+		max_length = 2,
+		choices = categoria,
+		default = '-',
+	)
+	foto = models.FileField(upload_to="%Y/%m/%d/")

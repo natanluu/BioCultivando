@@ -19,29 +19,27 @@
   <h1> Sugira mudanças! </h1>
 
 
-
   <div class="campos">
 
-  <form action="https://formspree.io/f/mzbkjqyy" method="POST">
-
-
+  <form action="/form-submit/" method="POST">
+    {% csrf_token %}
     <div class="item">
       <label>Insira uma sugestão: </label>
       <br>
-      <input name="sugestao" type="text" class="form-control, borda" placeholder="Ex: Adicionem a espécie x!"/>
+      <input name="sugestao" type="text" class="form-control, borda" placeholder="Ex: Adicionem a espécie x!" name="sugestao"/>
     </div>
 
     <div class="item">  
       <label>Recado à equipe:</label>
       <br>
-      <input name="recado" type="text" class="form-control, borda" placeholder="Sugestões/críticas/elogios">
+      <input name="recado" type="text" class="form-control, borda" placeholder="Sugestões/críticas/elogios" name="recado">
     </div>
   
 
     <div class="item"> 
       <label>Categoria:</label>
       <br>
-      <select class="form-control, borda">
+      <select class="form-control, borda" name="categoria">
        <option>Selecione uma Categoria</option>
        <option>Fitoterápicas</option>
        <option>Suculentas</option>
@@ -51,7 +49,7 @@
     <div class="item">
     	<label>Envie uma foto (se possível):</label>
       <br>
-    	<input name="foto" type="file" class="form-control-file, borda, item">
+    	<input name="foto" type="file" class="form-control-file, borda, item" name="foto">
     </div>
 
 <div class="botoes">

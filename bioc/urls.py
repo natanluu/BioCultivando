@@ -9,7 +9,8 @@ urlpatterns = [
 	path('', views.index, name='index'),
 
 	#sugestao
-	path('sugestao/sugest.html/', views.sugestao, name='sugestao'),
+	path('sugestao/', views.sugestao, name='sugestao'),
+	path('form-submit/', views.submited_form),
 
 	#filtros
 	path('orna-posts/', views.sucu_posts, name='postso'),
